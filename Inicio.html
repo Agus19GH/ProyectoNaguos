@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PORTAL ----------</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" /> <!-- https://fonts.google.com/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" /> <!-- https://getbootstrap.com/ -->
+    <link href="fontawesome/css/all.min.css" rel="stylesheet" /> <!-- https://fontawesome.com/ -->
+    <link href="css/estilos.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/1a031b4884.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+    
+<!--?php
+    
+        if(array_key_exists('button1', $_POST)) {
+            button1();
+        }
+        else if(array_key_exists('button2', $_POST)) {
+            button2();
+        }
+        function button1() {
+           
+            alert("This is Button1 that is selected");
+        }
+        function button2() {
+            echo "This is Button2 that is selected";
+        }
+    ?-->
+    <!--?php
+
+function post_request() {
+
+alert("Function");
+  $url = "https://--------------/CSPublicQueryService/CSPublicQueryService.svc/json/EncryptQS?user_name=------------&password=------------";
+
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Accept: application/json",
+   "Authorization: Bearer wyBRLs8EptCOElxG1bOB570q40o%2bYOHkOrFbjjdvF8CqIq6SmHMiIxFRTKqmWlbP",
+   "Content-Type: application/json",
+);
+
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = <<<DATA
+{
+  "user_name": "-----",
+  "password": "-----",
+  "accession_number": "",
+  "patient_id": ""
+}
+DATA;
+
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+
+
+
+alert($resp)
+
+}
+
+-->
+<!--?php
+    function post_request2(){
+        alert ("Ejecutando...");
+         }
+
+ -->
+
+
+    <div class="tm-container">
+         <div class="tm-row pt-4">
+                <div class="tm-col-left">
+                    <div class="tm-site-header media">
+                            <i class="fa-solid fa-user-doctor fa-5x mt-1 tm-logo"></i>
+                           <div class="media-body">
+                            <h1 class="tm-sitename text-uppercase">------</h1>
+                            <p class="tm-slogon ">Centro Médico</p>
+                        </div>        
+                    </div>
+                </div>
+                <div class="tm-col-right">
+                    <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+                        <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                        <ul class="navbar-nav text-uppercase"></ul> 
+                   </div>                        
+                    </nav>
+                </div>
+            </div>
+            <div class="tm-row">
+                <div class="tm-col-left"></div>
+                <main class="tm-col-right tm-contact-main"> <!-- Content -->
+                    <section class="tm-content tm-contact">
+                        <h2 class="mb-4 tm-content-title">Ingrese los datos proporcionados desde el Centro Médico</h2>
+                        <div class="main-block">
+                            <form id="myForm"action="" method="POST">
+                            <div class="form-group mb-2">
+                             <hr>
+                            <label id="icon" for="name"><i class="fas fa-user"></i></label>
+                            <input type="text" name="name" id="name" placeholder="ID Paciente" required/>
+                            <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
+                            <input type="password" name="name" id="name" placeholder="ID Estudio" required/>
+                            <hr>
+                            <p>Al presionar 'Consultar' acepta los términos y condiciones del uso de este sitio <a href="https://www.w3docs.com/privacy-policy">Leer Terminos y condiciones</a>.</p>
+                            <button type="submit"  class="btn-block" href="/">Consultar Estudio</button>
+                            </div>
+                          </form>
+                       <button onclick="ClickMe()">Solicitar Token</button>
+                       <script> async function clickMe2(){document.write('< >?phppost_request(); ?> ')}</script>
+
+                       <script type="text/javascript">
+                        async function ClickMe3(){ 
+                            let cValue = $('<? php post_request2(); ?>').val();
+                            alert (cValue);
+                        }
+                       </script>
+                       <script>
+                        async function clickMe(){
+                        
+                        
+                        let xhr = new XMLHttpRequest();
+                        xhr.open("POST", "https://-------------/portal/CSPublicQueryService/CSPublicQueryService.svc/json/EncryptQS?user_name=------&password=-----");
+                        xhr.setRequestHeader("Accept", "application/json");
+                        xhr.setRequestHeader("Authorization", "Bearer wyBRLs8EptCOElxG1bOB570q40o%2bYOHkOrFbjjdvF8CqIq6SmHMiIxFRTKqmWlbP"),
+                        xhr.setRequestHeader("Content-Type", "application/json");
+                        
+                        
+                        xhr.onreadystatechange = function () {
+                          if (xhr.readyState === 4) {
+                            console.log(xhr.status);
+                            console.log(xhr.responseText);
+                          }};
+                        
+                        let data = `{
+                            "user_name": "-----",
+                            "password": "--------",
+                            "accession_number": "",
+                            "patient_id": ""
+                          
+                        
+                        }`;
+                        
+                        xhr.send(data);
+                        
+                        //window.alert("sometext");
+                        //var result ="<?php php_func(); ?>"
+                        //document.write(result);
+                        }
+                        </script>
+                        <!--?php
+                        function php_func(){
+                            echo "Stay Safe";
+                        }
+                    ?-->
+                       </div>
+                    </section>
+                </main>
+        </div>        
+
+        <div class="tm-row">
+            <div class="tm-col-left text-center">            
+                        
+            </div>        
+            <div class="tm-col-right tm-col-footer">
+                <footer class="tm-site-footer text-right">
+                  
+                </footer>
+            </div>  
+        </div>
+
+        <div class="tm-bg"> <!-- Diagonal background design -->
+            <div class="tm-bg-left"></div>
+            <div class="tm-bg-right"></div>
+        </div>
+    </div>
+ 
+    </div>
+
+
+    <script>
+    function getData(form) {
+    var formData = new FormData(form);
+        
+        var paciente = "";
+        var estudio = "";
+        
+        var i = -1;
+    for (var pair of formData.entries()) {
+      
+      i = i+1;
+   //   console.log(pair[0] + ": " + pair[1]);
+      console.log(i);
+      switch(i) {
+      case 0:
+    paciente = pair[1];
+    break;
+    case 1:
+    estudio = pair[1];
+    break;
+    default:
+    console.log(pair[0] + ": " + pair[1]);
+              
+  }
+      
+  }
+  console.log(paciente+"-"+estudio);
+        window.open("https://-------.com/portal/Default.aspx?user_name=-----&password=------&accession_number="+estudio+"&patient_id="+paciente,"_self");
+}
+
+document.getElementById("myForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  getData(event.target);
+});
+
+</script>
+<div class="tm-col-right tm-col-footer">
+    <footer class="tm-site-footer text-right">
+        <p class="mb-0">Centro Médico -----
+        
+        | Nuestra Web: <a rel="nofollow" target="_parent" href="https://https://-------------/" class="tm-text-link">----------</a></p>
+    </footer>
+</div>  
+  
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/templatemo-script.js"></script>
+</body>
+</html>
